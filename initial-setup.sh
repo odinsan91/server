@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt-get install xorg openbox openbox-menu suckless-tools obmenu lxappearance terminator htop libpam-google-authenticator openssh-server
+sudo apt-get install xorg openbox openbox-menu suckless-tools obmenu lxappearance terminator htop libpam-google-authenticator openssh-server curl
+sudo apt install software-properties-common
 echo "Iniciando configuração do Google Authenticator:"
 google-authenticator
 echo "Configurando o Google Authenticator para SSH"
@@ -11,3 +12,4 @@ sudo ex +g/ChallengeResponseAuthentication/d -cwq /etc/ssh/sshd_config
 echo 'ChallengeResponseAuthentication yes' | sudo tee -a /etc/ssh/sshd_config > /dev/null
 echo "Reiniciando o servidor openssh"
 sudo /etc/init.d/ssh restart
+
