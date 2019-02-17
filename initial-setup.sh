@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get install xorg openbox openbox-menu suckless-tools obmenu lxappearance terminator htop libpam-google-authenticator openssh-server curl
-sudo apt install software-properties-common
+sudo apt install software-properties-common net-tools
 echo "Iniciando configuração do Google Authenticator:"
 google-authenticator
 echo "Configurando o Google Authenticator para SSH"
