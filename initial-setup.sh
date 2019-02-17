@@ -4,6 +4,7 @@ echo "Iniciando configuração do Google Authenticator:"
 google-authenticator
 echo "Configurando o Google Authenticator para SSH"
 echo "  Escrevendo em 'auth required pam_google_authenticator.so' em /etc/pam.d/sshd"
+sudo ex +g/pam_google_authenticator.so/d -cwq /etc/ssh/sshd_config
 echo "auth required pam_google_authenticator.so" | sudo tee -a /etc/pam.d/sshd > /dev/null
 echo "  Reescrevendo a configuração de ChallengeResponseAuthentication para yes"
 sudo ex +g/ChallengeResponseAuthentication/d -cwq /etc/ssh/sshd_config
